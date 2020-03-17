@@ -11,4 +11,3 @@ Wait-Process -Name OfficeC2RClient
 cd ~
 $Eject = New-Object -ComObject "Shell.Application"
 $Eject.Namespace(17).Items() | Where-Object { $_.Type -eq "CD Drive" } | foreach { $_.InvokeVerb("Eject") }
-Restart-Computer
