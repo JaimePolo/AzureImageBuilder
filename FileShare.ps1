@@ -1,5 +1,5 @@
 ﻿cd ~
-net use * \\filesharetest120320.file.core.windows.net\filesharetest120320 /u:filesharetest120320 Mmy+UoHBwf6s3tyvva1M8Vj7BO1Ev7bsUNQ0lB0CR5+aI7yT+2iz8mV0hxK8Ao+gPUgWYg/2bBlEMddYkaMQ0w==
+net use Z: \\fileshare1803.file.core.windows.net\ftp /u:fileshare1803 ntLsKczDP4GhtcklXjylaeKtoq2pkoJO6wzwjsVBS4Lp2xSj2o/NpyKkicBxfq+Eeg3mc1LFftB/6/BtGYXZnA==
 cd Z:
 dir
 .\en_visio_professional_2019.iso
@@ -9,5 +9,6 @@ dir
 .\Setup.exe /admin
 Wait-Process -Name OfficeC2RClient
 cd ~
+net use Z: /DELETE
 $Eject = New-Object -ComObject "Shell.Application"
 $Eject.Namespace(17).Items() | Where-Object { $_.Type -eq "CD Drive" } | foreach { $_.InvokeVerb("Eject") }
